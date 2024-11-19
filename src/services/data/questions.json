@@ -4,6 +4,11 @@
       "title": "Resimdeki ünlü kimdir",
       "source": "/images/questions/1.jpg",
       "options": ["Cevap A", "Cevap B", "Cevap C"]
+    },
+    {
+      "title": "Test sorusu",
+      "source": "/images/questions/1.jpg",
+      "options": ["Cevap A", "Cevap B", "Cevap C"]
     }
   ]
 }
