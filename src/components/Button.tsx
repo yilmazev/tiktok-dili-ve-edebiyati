@@ -6,6 +6,7 @@ interface IButton {
   variant?: "default"
   size?: "large" | "medium" | "small"
   isFull?: boolean
+  disabled?: boolean
   buttonColor?: string
   className?: string
   onClick?: React.MouseEventHandler<HTMLButtonElement>
@@ -17,12 +18,13 @@ const Button: React.FC<IButton> = ({
   variant = "default",
   size = "medium",
   isFull = false,
+  disabled = false,
   className,
   onClick,
   children
 }) => {
   const sizeClasses = {
-    large: "h-12 min-w-[124px] px-6 rounded-lg",
+    large: "h-12 min-w-[124px] px-3 rounded-lg",
     medium: "h-10 min-w-[108px] px-4 rounded-md",
     small: "h-8 min-w-24 px-3 rounded-[5px] text-[15px]"
   }
@@ -30,7 +32,6 @@ const Button: React.FC<IButton> = ({
   const typeClasses = {
     primary: "",
     secondary: "",
-    tertiary: "",
     borderless: "!px-0 !min-w-0"
   }
 
@@ -45,13 +46,14 @@ const Button: React.FC<IButton> = ({
   return (
     <button
       className={clsx(
-        "font-medium tracking-[0.15px]",
+        "flex items-center justify-center font-medium tracking-[0.15px] disabled:bg-[#ffffff14] disabled:text-[#ffffff57]",
         sizeClasses[size],
         typeClasses[buttonType],
         variantClasses[variantClassKey],
         className,
-        { "!w-full px-0": isFull }
+        { "!min-w-full px-0": isFull }
       )}
+      disabled={disabled}
       onClick={onClick}
     >
       {children}

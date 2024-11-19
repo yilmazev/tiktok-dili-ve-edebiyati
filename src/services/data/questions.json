@@ -1,0 +1,9 @@
+{
+  "questions": [
+    {
+      "title": "Resimdeki ünlü kimdir",
+      "source": "/images/questions/1.jpg",
+      "options": ["Cevap A", "Cevap B", "Cevap C"]
+    }
+  ]
+}
