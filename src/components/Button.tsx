@@ -19,7 +19,7 @@ const Button: React.FC<IButton> = ({
   isFull = false,
   className,
   onClick,
-  children,
+  children
 }) => {
   const sizeClasses = {
     large: "h-12 min-w-[124px] px-6 rounded-lg",
@@ -37,7 +37,7 @@ const Button: React.FC<IButton> = ({
   const variantClasses = {
     primary_default: "bg-[#fe2c55] text-white hover:bg-[#ea284e] active:bg-[#e0274b]",
     secondary_default: "bg-[#ffffff21] text-[#f6f6f6] hover:bg-[#ffffff30] active:bg-[#00000024]",
-    borderless_default: "bg-transparent text-[#ff3b5c] hover:text-[#ea284e] active:text-[#e0274b]",
+    borderless_default: "bg-transparent text-[#ff3b5c] hover:text-[#ea284e] active:text-[#e0274b]"
   }
 
   const variantClassKey = `${buttonType}_${variant}` as keyof typeof variantClasses

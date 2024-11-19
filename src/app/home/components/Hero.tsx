@@ -3,18 +3,25 @@
 import IconLogo from "@/assets/icons/logo.svg"
 import Button from "@/components/Button"
 import Link from "next/link"
+import { useEffect, useState } from "react"
 
 const Hero = () => {
-  const shareText = `tiktok dili ve edebiyatı ${window.location}`
+  const [ shareText, setShareText ] = useState("")
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setShareText(`tiktok dili ve edebiyatı ${window.location.href}`)
+    }
+  }, [])
 
   return (
-    <div className="min-h-[calc(100vh-60px)] w-full flex items-center justify-center">
+    <div className="flex min-h-[calc(100vh-60px)] w-full items-center justify-center">
       <div className="w-full">
         <h1 className="flex flex-col gap-4">
           <IconLogo className="w-80 fill-white" />
-          <span className="text-white text-7xl font-bold">Dili ve Edebiyatı</span>
+          <span className="text-7xl font-bold text-white">Dili ve Edebiyatı</span>
         </h1>
-        <p className="text-xl text-[#ffffffe6] mt-4 mb-8">Tuvallete bile TikTok izleyenler için özel olarak hazırlanmış sınava hemen başlayın!</p>
+        <p className="mb-8 mt-4 text-xl text-[#ffffffe6]">Tuvallete bile TikTok izleyenler için özel olarak hazırlanmış sınava hemen başlayın!</p>
         <div className="flex gap-3">
           <Button size="large">Teste Başla</Button>
           <Link href={`https://twitter.com/intent/tweet?text=${shareText}`} target="_blank" title="Paylaş">
