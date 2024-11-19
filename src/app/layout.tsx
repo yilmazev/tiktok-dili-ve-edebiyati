@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar"
 import "@/styles/globals.css"
+import { Analytics } from "@vercel/analytics/react"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
@@ -13,6 +14,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       <body className="bg-[#121212] font-tiktokFont text-[#ffffffe6] antialiased">
         <Navbar />
         {children}
+        <Analytics />
       </body>
     </html>
   )

@@ -9,6 +9,7 @@
     "lint": "eslint --fix '**/*.{tsx,ts}'"
   },
   "dependencies": {
+    "@vercel/analytics": "^1.4.1",
     "clsx": "^2.1.1",
     "next": "14.2.16",
     "react": "^18",
